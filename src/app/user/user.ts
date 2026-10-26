@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { DUMMY_USERS } from './dummy-users';
+
+const randomUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 @Component({
   imports: [],
@@ -6,4 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './user.css',
   templateUrl: './user.html',
 })
-export class User {}
+export class User {
+  selectedUser = DUMMY_USERS[randomUserIndex];
+}
