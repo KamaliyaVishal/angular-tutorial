@@ -16,4 +16,10 @@ export class User {
   get imagePath(): string {
     return `./users/${this.selectedUser.avatar}`;
   }
+
+  selectUser(): void {
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[randomIndex];
+    console.log(`Selected user: ${this.selectedUser.name}`);
+  }
 }
