@@ -1,7 +1,7 @@
 <div>
   <button>
     <!-- Property binding for image source -->
-    <img [src]="'./users/' + selectedUser.avatar" [alt]="selectedUser.name" />
+    <img [src]="imagePath" [alt]="selectedUser.name" />
 
     <!-- String interpolation for user name -->
     <span>{{ selectedUser.name }}</span>
