@@ -11,14 +11,15 @@ import { Tasks } from './tasks/tasks';
   templateUrl: './app.html',
 })
 export class App {
-  protected readonly title = signal('angular-tutorial');
- 
-  @Output() selectdUser = new EventEmitter<string>();
-
   users = DUMMY_USERS;
+  SelectedUserID = 'u1';
 
   onUserSelected(userId: string) {
-    console.log(`User selected with ID: ${userId}`);
-    this.selectdUser.emit(userId);
+    this.SelectedUserID = userId;
   }
+
+  get selectedUser() {
+    return this.users.find(user => user.id === this.SelectedUserID)!;
+  }
+
 }
