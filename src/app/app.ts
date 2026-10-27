@@ -19,7 +19,7 @@ export class App {
   }
 
   get selectedUser() {
-    return this.users.find(user => user.id === this.SelectedUserID)!;
+    return this.users.find(user => user.id === this.SelectedUserID);
   }
 
 }
