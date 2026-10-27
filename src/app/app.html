@@ -2,11 +2,11 @@
 
 <main>
     <ul id="users">
+        @for (user of usersList; track user.id) {
         <li>
-            @for (user of usersList; track user.id) {
             <app-user [user]="user" (selectUser)="onUserSelected($event)" />
-            }
         </li>
+        }
     </ul>
 
     <app-tasks [name]="selectedUser? selectedUser.name : undefined" />
