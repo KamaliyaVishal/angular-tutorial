@@ -13,4 +13,8 @@ export class App {
   protected readonly title = signal('angular-tutorial');
 
   users = DUMMY_USERS;
+
+  onUserSelected(userId: string) {
+    console.log(`User selected with ID: ${userId}`);
+  }
 }
