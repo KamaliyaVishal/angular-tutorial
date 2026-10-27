@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,  } from '@angular/core';
 import { Header } from './header/header';
 import { User } from './user/user';
+import { DUMMY_USERS } from './user/dummy-users';
 
 @Component({
   imports: [Header, User],
@@ -10,4 +11,6 @@ import { User } from './user/user';
 })
 export class App {
   protected readonly title = signal('angular-tutorial');
+
+  users = DUMMY_USERS;
 }
