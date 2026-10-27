@@ -10,7 +10,7 @@ export class User {
 
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
-  @Input({ required: true }) id!: string;
+  @Input({ required: true }) userId!: string;
 
   @Output() selectUser = new EventEmitter();
 
@@ -24,8 +24,8 @@ export class User {
     return `users/${this.avatar}`;
   }
 
-  selectdUser() {
-    this.selectUser.emit(this.id); 
+  selectdUser(userId: string) {
+    this.selectUser.emit(userId); 
   }
 
 }
