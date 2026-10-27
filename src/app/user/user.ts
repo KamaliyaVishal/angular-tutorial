@@ -8,9 +8,12 @@ import { Component, computed, EventEmitter, Input, input, Output } from '@angula
 })
 export class User {
 
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) userId!: string;
+  @Input({ required: true }) user!: {
+    id: string;
+    name: string;
+    avatar: string
+  };
+
   @Output() selectUser = new EventEmitter();
 
   // Using the new input decorator, alternative to @Input decorator
@@ -20,11 +23,11 @@ export class User {
   // imagePath = computed(() => `users/${this.avatar()}`);
 
   get imagePath() {
-    return `users/${this.avatar}`;
+    return `users/${this.user.avatar}`;
   }
 
   selectdUser(userId: string) {
-    this.selectUser.emit(userId); 
+    this.selectUser.emit(userId);
   }
 
 }

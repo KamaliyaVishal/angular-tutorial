@@ -11,7 +11,7 @@ import { Tasks } from './tasks/tasks';
   templateUrl: './app.html',
 })
 export class App {
-  users = DUMMY_USERS;
+  usersList = DUMMY_USERS;
   SelectedUserID = 'u1';
 
   onUserSelected(userId: string) {
@@ -19,7 +19,7 @@ export class App {
   }
 
   get selectedUser() {
-    return this.users.find(user => user.id === this.SelectedUserID);
+    return this.usersList.find(user => user.id === this.SelectedUserID);
   }
 
 }

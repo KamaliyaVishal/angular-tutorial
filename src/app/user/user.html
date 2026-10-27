@@ -1,11 +1,11 @@
 <div>
-  <button (click)="selectdUser(userId)">
+  <button (click)="selectdUser(this.user.id)">
     
     <!-- Property binding for image source, used signal for reactive updates -->
-    <img [src]="imagePath" [alt]="name" />
+    <img [src]="imagePath" [alt]="user.name" />
 
     <!-- String interpolation for user name, used signal for reactive updates -->
-    <span>{{ name }}</span>
+    <span>{{ user.name }}</span>
  
   </button>
 </div>
