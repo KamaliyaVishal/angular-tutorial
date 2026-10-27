@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
 
 // Generate a random index to select a user from the DUMMY_USERS array
@@ -11,13 +11,15 @@ const randomUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   templateUrl: './user.html',
 })
 export class User {
-  selectedUser = DUMMY_USERS[randomUserIndex];
+
+  // signal to hold the selected user, initialized with a random user from DUMMY_USERS
+  selectedUser = signal(DUMMY_USERS[randomUserIndex]);
 
   /**
    * Returns the path to the selected user's avatar image.
    */
   get imagePath(): string {
-    return `./users/${this.selectedUser.avatar}`;
+    return `./users/${this.selectedUser().avatar}`;
   }
 
   /**
@@ -25,7 +27,8 @@ export class User {
    */
   selectUser(): void {
     const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-    this.selectedUser = DUMMY_USERS[randomIndex];
-    console.log(`Selected user: ${this.selectedUser.name}`);
+    this.selectedUser.set(DUMMY_USERS[randomIndex]);
+    console.log(`Selected user: ${this.selectedUser().name}`);
   }
 }
+
