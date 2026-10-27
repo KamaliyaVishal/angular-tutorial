@@ -12,7 +12,7 @@ import { Tasks } from './tasks/tasks';
 })
 export class App {
   usersList = DUMMY_USERS;
-  SelectedUserID = 'u1';
+  SelectedUserID?: string;
 
   onUserSelected(userId: string) {
     this.SelectedUserID = userId;
