@@ -11,7 +11,6 @@ export class User {
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
   @Input({ required: true }) userId!: string;
-
   @Output() selectUser = new EventEmitter();
 
   // Using the new input decorator, alternative to @Input decorator

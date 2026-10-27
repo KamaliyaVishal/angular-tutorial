@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -6,4 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './tasks.css',
   templateUrl: './tasks.html',
 })
-export class Tasks {}
+export class Tasks {
+
+  @Input({ required: true }) name!: string;
+  
+}
